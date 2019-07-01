@@ -1,0 +1,55 @@
+package com.gupaoedu.mythread;
+
+class MyThreadRunnable implements Runnable {
+    private volatile int ticket = 5;
+
+    public void run() {
+        for (int i = 0; i < 10; i++) {
+            synchronized (this) {
+                if (ticket > 0) {
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    ticket = ticket - 1;
+                    System.out.println("ticket = " + ticket);
+
+                }
+            }
+        }
+    }
+}
+
+public class RunnableDemo {
+    public static void main(String[] args) {
+        MyThreadRunnable my = new MyThreadRunnable();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+        new Thread(my).start();
+
+
+    }
+}
